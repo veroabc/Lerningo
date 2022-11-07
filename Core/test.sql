@@ -1,4 +1,4 @@
-CREATE Table esp_synonyms (id_esp_syn INTEGER AUTOINCREMENT, esp_syn_name VARCHAR(50), PRIMARY KEY (id_esp_syn));
+CREATE TABLE esp_synonyms (id_esp_syn INTEGER AUTOINCREMENT, esp_syn_name VARCHAR(50), PRIMARY KEY (id_esp_syn));
 
 
 
@@ -30,7 +30,7 @@ INSERT INTO spanish (id_esp,esp_name,id_esp_syn) VALUES (22,"Pizarra",22);
 INSERT INTO spanish (id_esp,esp_name,id_esp_syn) VALUES (23,"Pizarra",23);
 
 
-CREATE Table engl_synonyms (id_engl_syn INTEGER AUTOINCREMENT, engl_syn_name VARCHAR(50), PRIMARY KEY (id_engl_syn));
+CREATE TABLE engl_synonyms (id_engl_syn INTEGER AUTOINCREMENT, engl_syn_name VARCHAR(50), PRIMARY KEY (id_engl_syn));
 
 
 
