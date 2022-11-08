@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'scanner.dart';
+import 'db_helper.dart';
 
 void main() {
   runApp(const MyApp());
@@ -52,15 +53,13 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
 
-  void _incrementCounter() {
-    setState(() {
-      // This call to setState tells the Flutter framework that something has
-      // changed in this State, which causes it to rerun the build method below
-      // so that the display can reflect the updated values. If we changed
-      // _counter without calling setState(), then the build method would not be
-      // called again, and so nothing would appear to happen.
-      _counter++;
-    });
+  late SQLiteDbProvider _sqliteService;
+
+  @override
+  void initState() {
+    super.initState();
+    _sqliteService = SQLiteDbProvider.db;
+    _sqliteService.initDB();
   }
 
   @override

@@ -1,7 +1,7 @@
 class MainModel {
   final int id_main;
-  final String id_engl;
-  final String id_esp;
+  final int id_engl;
+  final int id_esp;
   final String phrase;
   final String picture_path;
   static final columns = ["id_main", "id_engl", "id_esp", "phrase", "picture_path"];
