@@ -1,8 +1,5 @@
 CREATE TABLE esp_synonyms (id_esp_syn INTEGER AUTOINCREMENT, esp_syn_name VARCHAR(50), PRIMARY KEY (id_esp_syn));
 
-
-
-
 CREATE TABLE spanish (id_esp INTEGER AUTOINCREMENT, esp_name VARCHAR(50), id_esp_syn INTEGER, PRIMARY KEY (id_esp), FOREIGN KEY (id_esp_syn) REFERENCES esp_synonyms(id_esp_syn));
 
 INSERT INTO spanish (id_esp,esp_name,id_esp_syn) VALUES (1,"Pizarra",1);
