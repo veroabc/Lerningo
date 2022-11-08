@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io' show Platform;
+import 'db_helper.dart';
 
 class Scanner extends StatefulWidget {
   @override
@@ -45,7 +46,7 @@ class _QRViewExampleState extends State<StatefulWidget> {
                   'Barcode Type: ${describeEnum(result!.format)}   Data: ${result!.code}')
                   : Text('Scan a code'),
             ),
-          )
+          ),
         ],
       ),
     );
@@ -54,6 +55,8 @@ class _QRViewExampleState extends State<StatefulWidget> {
   void _onQRViewCreated(QRViewController controller) {
     this.controller = controller;
     controller.scannedDataStream.listen((scanData) {
+      var words = SQLiteDbProvider.db.getAllWords();
+
       setState(() {
         result = scanData;
       });
@@ -66,4 +69,3 @@ class _QRViewExampleState extends State<StatefulWidget> {
     super.dispose();
   }
 }
-
