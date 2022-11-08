@@ -50,7 +50,7 @@ CREATE TABLE english (id_engl INTEGER AUTOINCREMENT, engl_name VARCHAR(50), id_e
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (1,"Board",1);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (2,"Table",2);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (3,"Chair",3);
-INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (4,"Wardrobe",4);
+INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (4,"Cupboard",4);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (5,"Computer",5);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (6,"Laptop",6);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (7,"Garbage Can",7);
@@ -59,7 +59,7 @@ INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (9,"Backpack",9);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (10,"Marker",10);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (11,"Eraser",11);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (12,"Window",12);
-INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (13,"Radiator",13);
+INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (13,"Heator",13);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (14,"Sofa",14);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (15,"Screen",15);
 INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (16,"Socket",16);
@@ -86,36 +86,36 @@ INSERT INTO english (id_engl,engl_name,id_engl_syn) VALUES (33,"Class",33);
 
 CREATE TABLE Main (id_main INTEGER AUTOINCREMENT, id_engl INTEGER, id_esp INTEGER, phrase VARCHAR (255), picture_path VARCHAR (255), soundfile_path VARCHAR (255), PRIMARY KEY (id_main), FOREIGN KEY (id_engl) REFERENCES english(id_engl));
 
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (1,1,1,"The Teacher writes on the %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (2,2,2,"Anna puts the book on the %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (3,3,3,"Anna sits on the %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (4,4,4,"The clothes are in the %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (5,5,5,"The %s is on",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (6,6,6,"The %s is in your bag",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (7,7,7,"Put the paper in the %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (8,8,8,"There are some %s in the bathroom",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (9,9,9,"I have an apple in my %s",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (10,10,10,"Use the %s to ",%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (11,11,11,%s,%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (12,12,12,%s,%,%);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (13,13,13,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (14,14,14,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (15,15,15,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (16,16,16,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (17,17,17,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (18,18,18,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (19,19,19,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (20,20,20,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (21,21,21,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (22,22,22,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (23,23,23,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (24,24,24,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (25,25,25,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (26,26,26,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (27,27,27,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (28,28,28,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (29,29,29,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (30,30,30,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (31,31,31,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (32,32,32,
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (33,33,33,
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (1,1,1,"The Teacher writes on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (2,2,2,"Rosi puts the book on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (3,3,3,"Max sits on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (4,4,4,"The pencils are on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (5,5,5,"The %s is on.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (6,6,6,"The %s is in your bag.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (7,7,7,"Put the paper in the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (8,8,8,"There are some %s in the bathroom.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (9,9,9,"I have a sandwich in my %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (10,10,10,"Use the %s to write on the board.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (11,11,11,"Tim uses the %s to clean the board.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (12,12,12,"It is warm, please open the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (13,13,13,"It is warm inside because the %s is on.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (14,14,14,"the %s is soft.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (15,15,15,"The %s of the pc is broken.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (16,16,16,"The cable is plugged to the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (17,17,17,"The %s of the is closed.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (18,18,18,"The firefighters use the %s to put out the fire.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (19,19,19,"Luca is waiting for you on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (20,20,20,"The blind guy uses the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (21,21,21,"Can I go to the %s please?",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (22,22,22,"My hoodie is on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (23,23,23,"The Teacher uses the %s."%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (24,24,24,"We watch a film with the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (25,25,25,"The %s is turned on.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (26,26,26,"The %s goes up.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (27,27,27,"Alejandro is reading the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (28,28,28,"Veronika writes on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (29,29,29,"Daniel sits on the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (30,30,30,"The pupil goes to %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (31,31,31,"Alberto drinks from the %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (32,32,32,"The Computer has a %s.",%,%);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (33,33,33,"The door of the %s is open.",%,%);
