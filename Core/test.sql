@@ -1,6 +1,44 @@
 CREATE TABLE esp_synonyms (id_esp_syn INTEGER AUTOINCREMENT, esp_syn_name VARCHAR(50), PRIMARY KEY (id_esp_syn));
 
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (1,"Escritorio");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (2,"Asiento");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (3,"Computadora");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (4,"Basura");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (5,"Cartera");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (6,"Marcador");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (7,"Cristalera");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (8,"Calefactor");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (9,"Pasamanos");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (10,"Servicio");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (11,"Cañón");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (12,"Elevador");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (13,"Libreta");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (14,"Asiento");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (15,"Escuela");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (16,"Aula");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (17,"Sala");
+INSERT INTO esp_synonyms (id_esp_syn,esp_syn_name) VALUES (18,"Aseo");
 
+CREATE TABLE connect_syn_esp (id_esp INTEGER NOT NULL, id_esp_syn INTEGER NOT NULL, FOREIGN KEY (id_esp) REFERENCES spanish(id_esp), FOREIGN KEY (id_eps_syn) REFERENCES esp_synonyms(id_esp_syn));
+
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (2,1);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (3,2);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (5,3);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (7,4);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (9,5);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (10,6);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (12,7);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (13,8);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (20,9);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (21,10);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (21,18);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (24,11);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (26,12);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (28,13);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (29,14);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (30,15);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (33,16);
+INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (33,17);
 
 
 CREATE TABLE spanish (id_esp INTEGER AUTOINCREMENT, esp_name VARCHAR(50), id_esp_syn INTEGER, PRIMARY KEY (id_esp), FOREIGN KEY (id_esp_syn) REFERENCES esp_synonyms(id_esp_syn));
