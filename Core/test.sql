@@ -57,7 +57,7 @@ INSERT INTO spanish (id_esp,esp_name,id_esp_syn) VALUES (32,"Monitor",32);
 INSERT INTO spanish (id_esp,esp_name,id_esp_syn) VALUES (33,"Clase",33);
 
 
-CREATE TABLE connect_syn_esp (id_esp INTEGER NOT NULL, id_esp_syn INTEGER NOT NULL, FOREIGN KEY (id_esp) REFERENCES spanish(id_esp), FOREIGN KEY (id_eps_syn) REFERENCES esp_synonyms(id_esp_syn));
+CREATE TABLE connect_syn_esp (id_esp INTEGER NOT NULL, id_esp_syn INTEGER NOT NULL, FOREIGN KEY (id_esp) REFERENCES spanish(id_esp), FOREIGN KEY (id_esp_syn) REFERENCES esp_synonyms(id_esp_syn));
 
 INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (2,1);
 INSERT INTO connect_syn_esp (id_esp, id_esp_syn) VALUES (3,2);
@@ -216,7 +216,7 @@ INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (20,20,20,"The blind guy uses the %s.",NULL,NULL);
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (21,21,21,"Can I go to the %s please?",NULL,NULL);
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (22,22,22,"My hoodie is on the %s.",NULL,NULL);
-INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (23,23,23,"The Teacher uses the %s."NULL,NULL);
+INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (23,23,23,"The Teacher uses the %s.",NULL,NULL);
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (24,24,24,"We watch a film with the %s.",NULL,NULL);
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (25,25,25,"The %s is turned on.",NULL,NULL);
 INSERT INTO Main (id_main, id_engl, id_esp, phrase, picture_path, soundfile_path) VALUES (26,26,26,"The %s goes up.",NULL,NULL);
