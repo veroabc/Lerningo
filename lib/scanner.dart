@@ -1,9 +1,8 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:qr_code_scanner/qr_code_scanner.dart';
 import 'dart:io' show Platform;
 import 'db_helper.dart';
-import 'main_model.dart';
+import 'word_popup.dart';
 
 class Scanner extends StatefulWidget {
   @override
@@ -14,6 +13,8 @@ class _QRViewExampleState extends State<StatefulWidget> {
   final GlobalKey qrKey = GlobalKey(debugLabel: 'QR');
   Word? result;
   QRViewController? controller;
+
+  bool isDialogOpen = false;
 
   // In order to get hot reload to work we need to pause the camera if the platform
   // is android, or resume the camera if the platform is iOS.
@@ -39,15 +40,6 @@ class _QRViewExampleState extends State<StatefulWidget> {
               onQRViewCreated: _onQRViewCreated,
             ),
           ),
-          Expanded(
-            flex: 1,
-            child: Center(
-              child: (result != null)
-                  ? Text(
-                  'Result: ${result!.english}')
-                  : Text('Scan a code'),
-            ),
-          ),
         ],
       ),
     );
@@ -67,6 +59,14 @@ class _QRViewExampleState extends State<StatefulWidget> {
           return;
         }
         result = value;
+
+        if (!isDialogOpen) {
+          buildWordPopup(context, result!, () => {
+            isDialogOpen = false
+          },);
+
+          isDialogOpen = true;
+        }
       }));
 
     });

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'scanner.dart';
+import 'word_list.dart';
 import 'db_helper.dart';
 
 void main() {
@@ -25,9 +26,9 @@ class MyApp extends StatelessWidget {
         // or simply save your changes to "hot reload" in a Flutter IDE).
         // Notice that the counter didn't reset back to zero; the application
         // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.deepOrange
       ),
-      home: const MyHomePage(title: 'Lerningo App'),
+      home: const MyHomePage(title: 'Lerningo'),
     );
   }
 }
@@ -67,17 +68,58 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
+        actions: <Widget>[
+          Padding(
+              padding: const EdgeInsets.only(right: 20.0),
+              child: GestureDetector(
+                onTap: () {
+                  SQLiteDbProvider.db.getAllWords().then((words) => {
+                    Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => WordList(words)),
+                  )
+                  });
+                },
+                child: const Icon(
+                  Icons.list,
+                  size: 26.0,
+                ),
+              )
+          ),
+        ],
       ),
       body: Center(
-        child: ElevatedButton(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Image.asset('assets/home.png'),
+            const Padding(padding: EdgeInsets.only(top: 15),
+                child: Text('Lerningo', style: TextStyle(fontSize: 42, fontWeight: FontWeight.bold, color: Colors.black87),)),
+            const Padding(padding: EdgeInsets.only(top: 15, bottom: 45),
+                child: Text('Find It. Scan It', style: TextStyle(fontSize: 20, color: Colors.black54),)),
+            ElevatedButton( onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => Scanner()),
+              );
+            }, style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
+              child: const Text('START NOW'), )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+/*
+ElevatedButton(
             child: Text('Scan'),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => Scanner()),
               );
-            }),
-      ),
-    );
-  }
-}
+            })
+
+ */
