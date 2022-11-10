@@ -79,16 +79,18 @@ class SQLiteDbProvider {
 
 
 class Word {
+  final int id;
   final String english;
   final String spanish;
-  final int id;
+  final String exampleText;
 
-  Word(this.english, this.id, this.spanish);
+  Word(this.id, this.english, this.spanish, this.exampleText);
   factory Word.fromMap(Map<String, dynamic> data) {
     return Word(
+      data['id_main'],
       data['engl_name'],
-      data['id_engl'],
       data['esp_name'],
+      data['phrase']
     );
   }
 }

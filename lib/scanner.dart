@@ -70,6 +70,9 @@ class _QRViewExampleState extends State<StatefulWidget> {
       }));
 
     });
+
+    controller.pauseCamera();
+    controller.resumeCamera();
   }
 
   @override
