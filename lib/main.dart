@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -55,11 +56,24 @@ class _MyHomePageState extends State<MyHomePage> {
 
   late SQLiteDbProvider _sqliteService;
 
+  late int userScore = 0;
+
   @override
   void initState() {
     super.initState();
     _sqliteService = SQLiteDbProvider.db;
     _sqliteService.initDB();
+    updateUserScore();
+  }
+
+  updateUserScore() {
+    _sqliteService.getUserScore().then((value) =>
+      {
+      setState(() {
+      userScore = value!;
+      })
+    }
+  ,);
   }
 
   @override
@@ -68,6 +82,10 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
         actions: <Widget>[
+          Padding(
+              padding: const EdgeInsets.only(top: 20, right: 20.0),
+              child: Text('Your Word Score: $userScore')
+          ),
           Padding(
               padding: const EdgeInsets.only(right: 20.0),
               child: GestureDetector(
@@ -100,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ElevatedButton( onPressed: () {
               Navigator.push(
                 context,
-                MaterialPageRoute(builder: (context) => Scanner()),
+                MaterialPageRoute(builder: (context) => Scanner(updateUserScore)),
               );
             }, style: ElevatedButton.styleFrom(padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 20)),
               child: const Text('START NOW'), )

@@ -23,8 +23,11 @@ class WordListState extends State<WordList> {
             child: Column(crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 const Padding(padding: EdgeInsets.only(bottom: 15),
-                child: Text('All objects you can find', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black87))),
-                for(var item in widget.wordList ) Padding(padding: const EdgeInsets.only(top: 15), child: Text('${item.english} - ${item.spanish}', style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: Colors.black54)))
+                    child: Text('All objects you can find', style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold, color: Colors.black87))),
+                for(var item in widget.wordList )
+                  Padding(padding: const EdgeInsets.only(top: 15),
+                      child: Text('${item.english} - ${item.spanish}',
+                          style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500, color: item.isScanned ? Colors.green : Colors.black54)))
               ],
       ))),
     ));
